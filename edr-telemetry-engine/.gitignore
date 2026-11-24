@@ -1,0 +1,72 @@
+## Ignore files
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+Thumbs.db
+
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.ncb
+*.aps
+*.cpp.filters
+*.vcxproj.user
+*.vspscc
+*.vssscc
+
+## Build output
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+publish/
+*.dll
+*.exe
+*.pdb
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+## Test results
+TestResults/
+*.trx
+*.coverage
+
+## IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.log
+
+## Environment
+.env
+.env.local
+appsettings.local.json
+
+## Output files
+*.json
+*.csv
+alerts.json
+alerts.csv
+
+## Sensitive files
+credentials.txt
+secrets.json
+*.key
+certificates/
+
+## Temporary
+temp/
+tmp/
+*.tmp
+
+## OS files
+.env
+.env.*.local

@@ -1,0 +1,71 @@
+using EDRTelemetry.Core.Interfaces;
+using EDRTelemetry.Correlation.Engine;
+using EDRTelemetry.Correlation.Handlers;
+using EDRTelemetry.Correlation.Rules;
+using EDRTelemetry.Windows.Parsers;
+using EDRTelemetry.Windows.Sources;
+
+Console.WriteLine("=== EDR & Identity Telemetry Auditing Engine ===");
+Console.WriteLine("Version 1.0.0 - Advanced Threat Detection Platform");
+Console.WriteLine();
+
+// Initialize components
+var parser = new WindowsEventLogParser();
+var correlationEngine = new CorrelationEngine();
+var eventSource = new WindowsEventLogSource();
+
+// Register detection rules
+correlationEngine.RegisterRule(new LSASSAccessRule());
+correlationEngine.RegisterRule(new UnbackedMemoryAllocationRule());
+correlationEngine.RegisterRule(new SuspiciousParentChildRule());
+
+// Setup alert handlers
+var jsonHandler = new JsonFileAlertHandler("alerts.json");
+var csvHandler = new CsvAlertHandler("alerts.csv");
+var consoleHandler = new ConsoleAlertHandler();
+
+// Setup message routing
+using var subscription = eventSource.GetEventStream()
+    .Subscribe(async rawEvent =>
+    {
+        try
+        {
+            // Parse event
+            var parsedEvent = await parser.ParseAsync(rawEvent.RawData);
+            if (parsedEvent == null) return;
+
+            // Correlate and evaluate
+            var alerts = await correlationEngine.CorrelateAsync(new List<Core.Models.TelemetryEvent> { parsedEvent });
+
+            // Handle alerts
+            foreach (var alert in alerts)
+            {
+                await jsonHandler.HandleAsync(alert);
+                await csvHandler.HandleAsync(alert);
+                await consoleHandler.HandleAsync(alert);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Error processing event: {ex.Message}");
+            Console.ResetColor();
+        }
+    });
+
+// Start monitoring
+Console.WriteLine("Starting telemetry collection...");
+Console.WriteLine("Monitoring Event Logs: Security, Sysmon");
+Console.WriteLine();
+
+try
+{
+    await eventSource.StartAsync();
+    Console.WriteLine("Press any key to stop monitoring...");
+    Console.ReadKey();
+}
+finally
+{
+    await eventSource.StopAsync();
+    Console.WriteLine("\nTelemetry collection stopped.");
+}

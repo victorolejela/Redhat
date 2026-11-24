@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDRTelemetry.Core", "src\EDRTelemetry.Core\EDRTelemetry.Core.csproj", "{A1B2C3D4-E5F6-47A8-B9C0-D1E2F3A4B5C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDRTelemetry.Windows", "src\EDRTelemetry.Windows\EDRTelemetry.Windows.csproj", "{B2C3D4E5-F6A7-48B9-A0C1-D2E3F4A5B6C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDRTelemetry.Linux", "src\EDRTelemetry.Linux\EDRTelemetry.Linux.csproj", "{C3D4E5F6-A7B8-49A0-B1C2-D3E4F5A6B7C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDRTelemetry.Correlation", "src\EDRTelemetry.Correlation\EDRTelemetry.Correlation.csproj", "{D4E5F6A7-B8C9-4AB1-C2D3-D4E5F6A7B8C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDRTelemetry.Tests", "tests\EDRTelemetry.Tests\EDRTelemetry.Tests.csproj", "{E5F6A7B8-C9D0-4BC2-D3E4-D5E6F7A8B9CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-E5F6-47A8-B9C0-D1E2F3A4B5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-47A8-B9C0-D1E2F3A4B5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-47A8-B9C0-D1E2F3A4B5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-47A8-B9C0-D1E2F3A4B5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-48B9-A0C1-D2E3F4A5B6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-48B9-A0C1-D2E3F4A5B6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-48B9-A0C1-D2E3F4A5B6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-48B9-A0C1-D2E3F4A5B6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-49A0-B1C2-D3E4F5A6B7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-49A0-B1C2-D3E4F5A6B7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-49A0-B1C2-D3E4F5A6B7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-49A0-B1C2-D3E4F5A6B7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E5F6A7-B8C9-4AB1-C2D3-D4E5F6A7B8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E5F6A7-B8C9-4AB1-C2D3-D4E5F6A7B8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E5F6A7-B8C9-4AB1-C2D3-D4E5F6A7B8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E5F6A7-B8C9-4AB1-C2D3-D4E5F6A7B8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F6A7B8-C9D0-4BC2-D3E4-D5E6F7A8B9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F6A7B8-C9D0-4BC2-D3E4-D5E6F7A8B9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F6A7B8-C9D0-4BC2-D3E4-D5E6F7A8B9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F6A7B8-C9D0-4BC2-D3E4-D5E6F7A8B9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
